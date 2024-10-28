@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OwO Page</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f9f0ff;
+      color: #663399;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    
+    .container {
+      text-align: center;
+      background-color: #fff0f5;
+      border: 3px solid #ff69b4;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .container h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .owo-face {
+      font-size: 5em;
+      margin: 20px 0;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .owo-face:hover {
+      transform: scale(1.1);
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #ff1493;
+    }
+
+    /* Animations */
+    .shake {
+      animation: shake 0.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes shake {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>OwO! Welcome to the OwO Page</h1>
+  <div class="owo-face" id="owoFace">OwO</div>
+  <button class="button" onclick="toggleOwO()">Click me, nya~!</button>
+</div>
+
+<script>
+  const owoFace = document.getElementById('owoFace');
+  let owoMode = false;
+
+  function toggleOwO() {
+    owoMode = !owoMode;
+    if (owoMode) {
+      owoFace.textContent = "UwU";
+      owoFace.classList.add("shake");
+    } else {
+      owoFace.textContent = "OwO";
+      owoFace.classList.remove("shake");
+    }
+  }
+
+  owoFace.addEventListener('click', () => {
+    toggleOwO();
+  });
+</script>
+
+</body>
+</html>
