@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile  # Explicitly states the Dockerfile to use in 'src'
     container_name: owoo-app
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - mongo
     environment:
