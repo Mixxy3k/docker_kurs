@@ -9,7 +9,9 @@ services:
       - mongo-data:/data/db
 
   app:
-    build: ./src
+    build:
+      context: ./src  # Specifies the 'src' folder for building the Dockerfile
+      dockerfile: Dockerfile  # Explicitly states the Dockerfile to use in 'src'
     container_name: owoo-app
     ports:
       - "3000:3000"
