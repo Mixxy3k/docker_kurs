@@ -44,7 +44,7 @@ jobs:
         password: ${{ secrets.VPS_PASSWORD }}
         port: ${{ secrets.VPS_PORT }}
         script: |
-          cd /docker/owo/docker_kurs  # Change this to the path on your VPS where the app is located
+          cd docker/owo/docker_kurs/  # Change this to the path on your VPS where the app is located
           docker-compose down       # Stops and removes existing containers
           docker-compose pull       # Pulls the latest images
           docker-compose up -d      # Starts containers in detached mode
