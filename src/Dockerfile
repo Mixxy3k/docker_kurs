@@ -7,8 +7,8 @@ WORKDIR /app
 # Copy package.json and package-lock.json to install dependencies
 COPY package*.json ./
 
-# Install any necessary dependencies
-RUN npm install
+# Install dependencies (production only, if needed)
+RUN npm install --production
 
 # Copy the rest of the application code
 COPY . .
@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Command to run the app
-CMD ["node", "owo_mongo_express_app.js"]
+CMD ["npm", "start"]
