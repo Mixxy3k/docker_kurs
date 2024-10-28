@@ -9,7 +9,7 @@ services:
       - mongo-data:/data/db
     deploy:
       placement:
-        condition: node.role == manager
+        constrains: node.role == manager
 
   app:
     build:
