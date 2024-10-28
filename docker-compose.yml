@@ -7,6 +7,9 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+    deploy:
+      placement:
+        condition: node.role == manager
 
   app:
     build:
@@ -19,6 +22,9 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/owo_db
-
+    deploy:
+      replicas: 2
+      resstart_policy:
+        condition: on-failure
 volumes:
   mongo-data:
