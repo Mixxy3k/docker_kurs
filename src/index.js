@@ -5,7 +5,7 @@ const app = express();
 const port = 3000;
 
 // MongoDB connection URI (adjust if needed)
-const uri = "mongodb://127.0.0.1:27017";
+const uri = process.env.MONGO_URI || "mongodb://127.0.0.1:27017";
 const client = new MongoClient(uri);
 const dbName = "owo_db";
 let collection;
