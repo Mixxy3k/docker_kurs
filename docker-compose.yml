@@ -9,7 +9,7 @@ services:
       - mongo-data:/data/db
     deploy:
       placement:
-        constrains: node.role == manager
+        constraints: [node.role == manager]
 
   app:
     build:
@@ -24,7 +24,7 @@ services:
       - MONGO_URI=mongodb://mongo:27017/owo_db
     deploy:
       replicas: 2
-      resstart_policy:
+      restart_policy:
         condition: on-failure
 volumes:
   mongo-data:
