@@ -1,6 +1,6 @@
 services:
   web:
-    image: nginx:latest
+    image: mixxy3k/owo
     ports:
       - "80:80"
     deploy:
